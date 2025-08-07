@@ -16,6 +16,19 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Password is required"],
     },
+    otp: {
+      type: String,
+    },
+    otpExpirt: {
+      type: Date,
+    },
+    otpVerified: {
+      type: Boolean,
+      default: false,
+    },
+    otpExpiry:{
+      type: Date,
+    },
     purchasedCourses: [
       {
         type: mongoose.Schema.Types.ObjectId,

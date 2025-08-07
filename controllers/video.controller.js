@@ -10,7 +10,6 @@ export const streamVideoFile = (req, res) => {
   const {  course, filename } = req.params;
   const filePath = path.join(__dirname, `../uploads/hls/${course}/${filename}`);
 
-  console.log('Serving file:', filePath);
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).send('File not found');
